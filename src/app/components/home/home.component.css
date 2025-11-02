@@ -1,0 +1,10 @@
+/* Header */
+.bes-link{color:#e2e8f0;text-decoration:none;font-weight:600;opacity:.9}
+.bes-link:hover{opacity:1}
+.bes-burger{width:36px;height:28px;display:none;align-items:center;justify-content:center;gap:5px}
+.bes-burger span{display:block;width:24px;height:2px;background:#f1f5f9}
+@media (max-width: 840px){.bes-nav{display:none}.bes-burger{display:flex}}
+
+/* Cards hover */
+.feature-card{transition:transform 160ms ease, box-shadow 160ms ease;will-change:transform}
+.feature-card:hover,.feature-card:focus-within{transform:translateY(-2px) scale(1.01);box-shadow:0 10px 26px rgba(2,6,23,.16);outline:none}
