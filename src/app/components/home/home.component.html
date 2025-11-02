@@ -1,0 +1,338 @@
+<!-- Home Page for Black Ember Spirits -->
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#1A1A1A; line-height:1.6;">
+  <!-- Header (exactly 100px height, no buttons) -->
+  <header class="bes-header" style="height:100px; background:#1D1A22; color:#FAF8F2; display:flex; align-items:center; justify-content:space-between; padding:0 24px; position:sticky; top:0; z-index:1000;">
+    <div style="display:flex; align-items:center; gap:24px; min-width:180px;">
+      <div class="bes-brand" style="font-weight:800; letter-spacing:1px; white-space:nowrap; font-size:18px;">BLACK EMBER SPIRITS</div>
+      <nav class="bes-nav" style="display:flex; gap:18px; align-items:center; white-space:nowrap;">
+        <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" class="bes-link">About</a>
+        <a href="#why" (click)="$event.preventDefault(); scrollTo('why')" class="bes-link">Why</a>
+        <a href="#collection" (click)="$event.preventDefault(); scrollTo('collection')" class="bes-link">Collection</a>
+        <a href="#cocktails" (click)="$event.preventDefault(); scrollTo('cocktails')" class="bes-link">Cocktails</a>
+        <a href="#find" (click)="$event.preventDefault(); scrollTo('find')" class="bes-link">Find</a>
+      </nav>
+    </div>
+    <a href="#menu" class="bes-burger" (click)="toggleMenu($event)" aria-label="Toggle menu" style="display:none;">
+      <span></span><span></span><span></span>
+    </a>
+  </header>
+  <!-- Mobile menu card -->
+  <div *ngIf="menuOpen" class="bes-menu-card" style="position:fixed; top:100px; left:0; right:0; background:#ffffff; border-bottom:1px solid #e5e7eb; box-shadow:0 8px 24px rgba(0,0,0,0.08); z-index:999;">
+    <div style="max-width:1100px; margin:0 auto; padding:16px; display:flex; gap:12px; flex-direction:column;">
+      <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" class="bes-menu-link">About</a>
+      <a href="#why" (click)="$event.preventDefault(); scrollTo('why')" class="bes-menu-link">Why</a>
+      <a href="#collection" (click)="$event.preventDefault(); scrollTo('collection')" class="bes-menu-link">Collection</a>
+      <a href="#cocktails" (click)="$event.preventDefault(); scrollTo('cocktails')" class="bes-menu-link">Cocktails</a>
+      <a href="#find" (click)="$event.preventDefault(); scrollTo('find')" class="bes-menu-link">Find</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#FAF8F2,#FFFFFF); padding:56px 16px;">
+    <mat-card style="max-width:1100px; margin:0 auto; padding:32px; border-radius:16px; box-shadow:0 10px 30px rgba(2,6,23,0.08); background:#ffffff;">
+      <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+        <div style="flex:1 1 440px;">
+          <h1 style="margin:0 0 12px 0; font-size:40px; line-height:1.2; color:#1D1A22;">Small-batch spirits, fired by craft.</h1>
+          <p style="margin:0 0 16px 0; font-size:16px; color:#3c3c3c;">From charred oak barrels to your glass—Black Ember balances smoke, spice, and subtle sweetness.</p>
+          <ul style="margin:0 0 16px 16px; color:#3c3c3c;">
+            <li>Independent, grain-to-glass distilling</li>
+            <li>Sustainably sourced grains and honey</li>
+            <li>Recognized by regional tasting panels and competitions</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+            <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; padding:0 20px; height:44px; border-radius:8px; font-weight:600;">Find a bottle near you</button>
+            <button mat-stroked-button style="height:44px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Explore the collection</button>
+          </div>
+          <p style="margin:12px 0 0 0; font-size:12px; color:#6b7280;">Please enjoy responsibly. By continuing, you confirm you are of legal drinking age in your region.</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#1D1A22;">Our Story</h2>
+      <p style="margin:0 0 8px 0; color:#3c3c3c; font-weight:600;">Born of fire, patience, and purpose.</p>
+      <p style="margin:0 0 16px 0; color:#3c3c3c;">We founded Black Ember to prove bold does not mean harsh—and craft can be both meticulous and modern.</p>
+      <ul style="margin:0 0 16px 16px; color:#3c3c3c;">
+        <li>Distilled in small runs for consistency and character</li>
+        <li>Thoughtful oak selection: toast and char matched to each spirit</li>
+        <li>Local partnerships that support farmers and healthy watersheds</li>
+      </ul>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; margin:16px 0;">
+        <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; height:40px; border-radius:8px;">Meet the distillers</button>
+        <button mat-stroked-button style="height:40px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Visit the distillery</button>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:8px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22; margin-bottom:6px;">Independent & Intentional</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Every decision—from grain bill to proofing cut—is made in-house for clarity of flavor.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22; margin-bottom:6px;">Place Matters</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">We source within our region to capture a sense of place in every bottle.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22; margin-bottom:6px;">Time Well Spent</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Slow fermentation and careful aging let depth, not burn, lead the experience.</mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="padding:48px 16px; background:#FAF8F2;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#1D1A22;">Why Black Ember</h2>
+      <p style="margin:0 0 8px 0; color:#3c3c3c; font-weight:600;">Flavor first. Always responsible.</p>
+      <p style="margin:0 0 16px 0; color:#3c3c3c;">We elevate character without chasing extremes—balanced spirits that welcome a second sip.</p>
+      <ul style="margin:0 0 16px 16px; color:#3c3c3c;">
+        <li>Balanced profiles that shine neat and in cocktails</li>
+        <li>Transparent sourcing and batch notes on every release</li>
+        <li>Real sustainability actions—lighter glass, recycled cartons</li>
+      </ul>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:8px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Balanced by Design</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">We use char and smoke as accents, never as a mask.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Sourced with Care</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Grains and botanicals traceable to trusted growers.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Tested & Tasted</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Every batch panel-tasted for texture, aroma, and finish.</mat-card-content>
+        </mat-card>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:20px;">
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e5e7eb; border-radius:12px; padding:18px; background:#ffffff;">
+          <p style="margin:0 0 6px 0; color:#1D1A22; font-weight:700;">Asha P.</p>
+          <p style="margin:0; color:#3c3c3c;">“Approachable neat, exceptional in classic builds—Black Ember hits the sweet spot.”</p>
+        </mat-card>
+        <mat-card style="flex:1 1 320px; min-width:280px; border:1px solid #e5e7eb; border-radius:12px; padding:18px; background:#ffffff;">
+          <p style="margin:0 0 6px 0; color:#1D1A22; font-weight:700;">The Cask Journal</p>
+          <p style="margin:0; color:#3c3c3c;">“Nuanced oak, clean grain character, and a finish that lingers without heat.”</p>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+        <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; height:40px; border-radius:8px;">See what sets us apart</button>
+        <button mat-stroked-button style="height:40px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Read our batch notes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection -->
+  <section id="collection" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#1D1A22;">The Collection</h2>
+      <p style="margin:0 0 8px 0; color:#3c3c3c; font-weight:600;">Core expressions, limited editions, same commitment.</p>
+      <p style="margin:0 0 16px 0; color:#3c3c3c;">From our smoked rye to botanical gin, each bottle tells a different chapter of fire and oak.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-bottom:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Smoked Rye Whiskey</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Pepper, cocoa, ember-kissed finish. Toasted oak frames spicy grain notes.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Honey Cask Bourbon</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Caramel, orange peel, and a soft floral lift from honey-seasoned barrels.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Citrus & Juniper Gin</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Bright citrus oils, piney juniper, and a silkier-than-expected mouthfeel.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Barrel-Rested Single Malt</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Baked apple, malt biscuit, and vanilla from medium toast American oak.</mat-card-content>
+        </mat-card>
+      </div>
+      <!-- Plans / product groupings -->
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card style="flex:1 1 300px; min-width:280px; border:2px solid #1D1A22; border-radius:16px; padding:22px; background:#1D1A22; color:#FAF8F2; transform:translateY(-4px); box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <mat-card-title style="font-size:18px; color:#FAF8F2;">Core Collection</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:14px; color:#e5e7eb;">750 ml • 43–46% ABV</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#f3f4f6;">
+            <li>Year-round availability</li>
+            <li>Consistent flavor profiles batch to batch</li>
+            <li>Neat or cocktail-ready</li>
+          </ul>
+          <button mat-raised-button color="accent" style="width:100%; height:44px; background:#CBA64B; color:#1D1A22; font-weight:700;">View core lineup</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e5e7eb; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Limited Releases</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:14px; color:#6b7280;">750 ml • Seasonal ABV</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#3c3c3c;">
+            <li>Experimental casks and finishes</li>
+            <li>Small allotments—first come, first served</li>
+            <li>Announced to subscribers first</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; height:42px; border-color:#CBA64B; color:#1D1A22;">Join release list</button>
+        </mat-card>
+        <mat-card style="flex:1 1 300px; min-width:280px; border:1px solid #e5e7eb; border-radius:14px; padding:20px; background:#ffffff;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Distiller's Select</mat-card-title>
+          <div style="margin:6px 0 14px 0; font-size:14px; color:#6b7280;">Single barrel • Proof varies</div>
+          <ul style="padding-left:18px; margin:0 0 16px 0; color:#3c3c3c;">
+            <li>Hand-picked barrels</li>
+            <li>Numbered bottles with full notes</li>
+            <li>Ideal for collectors and bars</li>
+          </ul>
+          <button mat-stroked-button style="width:100%; height:42px; border-color:#CBA64B; color:#1D1A22;">Request allocation</button>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+        <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; height:40px; border-radius:8px;">Explore bottles</button>
+        <button mat-stroked-button style="height:40px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Join release alerts</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#6b7280;">Availability varies by market. Check the locator for nearby retailers.</p>
+    </div>
+  </section>
+
+  <!-- Craft -->
+  <section id="craft" style="padding:48px 16px; background:#FAF8F2;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#1D1A22;">How We Craft</h2>
+      <p style="margin:0 0 8px 0; color:#3c3c3c; font-weight:600;">Precision from grain to glass.</p>
+      <p style="margin:0 0 16px 0; color:#3c3c3c;">We build depth through careful choices—time, temperature, toast, and taste.</p>
+      <ul style="margin:0 0 16px 16px; color:#3c3c3c;">
+        <li>Slow, cool fermentation for cleaner aromatics</li>
+        <li>Copper pot distillation for textured spirit</li>
+        <li>Proofed with mineral-balanced water for a soft finish</li>
+      </ul>
+      <div style="display:flex; flex-wrap:wrap; gap:16px; margin-top:8px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Sourcing</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Traceable grains and botanicals from trusted growers.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Mash & Ferment</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Controlled temps preserve nuanced esters and mouthfeel.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Distill & Rest</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Selective cuts, then patient barrel time for integration.</mat-card-content>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; height:40px; border-radius:8px;">See the full process</button>
+        <button mat-stroked-button style="height:40px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Book a tour</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#6b7280;">Closed-loop cooling and heat recovery reduce our water and energy use.</p>
+    </div>
+  </section>
+
+  <!-- Cocktails -->
+  <section id="cocktails" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#1D1A22;">Signature Cocktails</h2>
+      <p style="margin:0 0 8px 0; color:#3c3c3c; font-weight:600;">Bar-worthy, home-easy builds.</p>
+      <p style="margin:0 0 16px 0; color:#3c3c3c;">Three- to five-ingredient recipes that respect the spirit and the moment.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 300px; min-width:260px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Ember Old Fashioned</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">2 oz Smoked Rye, 0.25 oz demerara syrup, 2 dashes bitters. Stir with ice, strain over rock, orange twist.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 300px; min-width:260px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Golden Bee Sour</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">2 oz Honey Cask Bourbon, 0.75 oz lemon, 0.5 oz honey syrup, egg white optional. Dry shake, shake with ice, strain.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 300px; min-width:260px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Cinder Highball</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">1.5 oz Citrus & Juniper Gin, 0.5 oz grapefruit, top with chilled soda. Build over ice, long grapefruit peel.</mat-card-content>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; height:40px; border-radius:8px;">Download recipe guide</button>
+        <button mat-stroked-button style="height:40px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Shop recommended barware</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#6b7280;">Always measure responsibly; adjust sweetness and dilution to taste.</p>
+    </div>
+  </section>
+
+  <!-- Find -->
+  <section id="find" style="padding:48px 16px; background:#FAF8F2;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#1D1A22;">Find a Bottle</h2>
+      <p style="margin:0 0 8px 0; color:#3c3c3c; font-weight:600;">Closer than you think.</p>
+      <p style="margin:0 0 16px 0; color:#3c3c3c;">Use our locator to see retailers and bars carrying Black Ember near you.</p>
+      <ul style="margin:0 0 16px 16px; color:#3c3c3c;">
+        <li>Search by city or ZIP</li>
+        <li>Filter by bottle, pour, or cocktail list</li>
+        <li>Opt into alerts when new stock arrives nearby</li>
+      </ul>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; height:40px; border-radius:8px;">Open the locator</button>
+        <button mat-stroked-button style="height:40px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Request availability at your shop</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#6b7280;">Retail partners update inventory regularly; call ahead to confirm stock.</p>
+    </div>
+  </section>
+
+  <!-- Responsibility -->
+  <section id="responsibility" style="padding:48px 16px; background:#ffffff;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <h2 style="margin:0 0 8px 0; font-size:28px; color:#1D1A22;">Responsibility & Sustainability</h2>
+      <p style="margin:0 0 8px 0; color:#3c3c3c; font-weight:600;">Great spirits, greater responsibility.</p>
+      <p style="margin:0 0 16px 0; color:#3c3c3c;">We prioritize safe enjoyment and a lighter footprint in every decision.</p>
+      <ul style="margin:0 0 16px 16px; color:#3c3c3c;">
+        <li>For legal drinking age only—never share with minors</li>
+        <li>Plan a safe ride; never drink and drive</li>
+        <li>Lighter glass, recycled cartons, and local sourcing reduce impact</li>
+      </ul>
+      <div style="display:flex; flex-wrap:wrap; gap:16px;">
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Drink Smart</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Know your pour sizes, pace yourself, hydrate, and eat.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Reduce & Reuse</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">Return, recycle, or repurpose bottles and packing.</mat-card-content>
+        </mat-card>
+        <mat-card class="feature-card" style="flex:1 1 240px; min-width:240px; border-radius:12px; padding:20px; border:1px solid #e5e7eb;">
+          <mat-card-title style="font-size:18px; color:#1D1A22;">Community & Care</mat-card-title>
+          <mat-card-content style="color:#3c3c3c;">We support hospitality wellness and safe-service training.</mat-card-content>
+        </mat-card>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
+        <button mat-raised-button color="primary" style="background:#1D1A22; color:#FAF8F2; height:40px; border-radius:8px;">Read our responsibility guidelines</button>
+        <button mat-stroked-button style="height:40px; border-radius:8px; border-color:#CBA64B; color:#1D1A22;">Explore our sourcing practices</button>
+      </div>
+      <p style="margin:12px 0 0 0; font-size:12px; color:#6b7280;">Please enjoy responsibly. If alcohol is a concern, seek support resources in your area.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#1D1A22; color:#E5E7EB;">
+    <div style="max-width:1100px; margin:0 auto; padding:28px 16px; display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start; justify-content:space-between;">
+      <div style="min-width:220px;">
+        <div style="font-weight:800; margin-bottom:6px; letter-spacing:0.5px;">BLACK EMBER SPIRITS</div>
+        <div style="font-size:13px; color:#cbd5e1;">Black Ember Spirits crafts balanced small-batch spirits that honor grain, oak, and good company—always enjoyed responsibly.</div>
+      </div>
+      <div style="display:flex; gap:32px; flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#f1f5f9;">Product</div>
+          <a href="#collection" (click)="$event.preventDefault(); scrollTo('collection')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Collection</a>
+          <a href="#cocktails" (click)="$event.preventDefault(); scrollTo('cocktails')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Signature Cocktails</a>
+          <a href="#find" (click)="$event.preventDefault(); scrollTo('find')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Find a Bottle</a>
+          <a href="#collection" (click)="$event.preventDefault(); scrollTo('collection')" style="display:block; text-decoration:none; color:#cbd5e1;">Release Alerts</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#f1f5f9;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">About</a>
+          <a href="#craft" (click)="$event.preventDefault(); scrollTo('craft')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">How We Craft</a>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Visit the Distillery</a>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block; text-decoration:none; color:#cbd5e1;">Careers</a>
+        </div>
+        <div>
+          <div style="font-weight:700; margin-bottom:8px; color:#f1f5f9;">Legal</div>
+          <a href="#responsibility" (click)="$event.preventDefault(); scrollTo('responsibility')" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Responsible Drinking</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Privacy Policy</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1; margin-bottom:6px;">Terms of Use</a>
+          <a href="#" style="display:block; text-decoration:none; color:#cbd5e1;">Do Not Sell/Share My Info</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#2b2b2b;"></mat-divider>
+    <div style="max-width:1100px; margin:0 auto; padding:14px 16px; font-size:12px; color:#9ca3af;">© 2025 black-ember-spirits. All rights reserved.</div>
+  </footer>
+</div>
